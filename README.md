@@ -1,44 +1,41 @@
-# PDF Merge & Arrange (Client‑Only)
+# PDF Merge & Arrange
 
-Fast, simple, and private PDF merging and arranging in your browser. No uploads, no accounts, just drag, drop, reorder, and merge.
+Merge and reorder PDFs directly in your browser. Private, fast, and simple — no uploads.
+
+## Live site
+`https://kohaningithub.github.io/PDF_Merger/`
+
+If the page returns 404 after a fresh push, wait ~1–2 minutes and refresh. Ensure GitHub Pages is enabled for the repository (Settings → Pages → Deploy from a branch → main /(root)).
 
 ## Features
-- Add multiple PDFs (drag & drop or file picker)
-- Reorder files via drag handle
-- Optional page selection per file (e.g., `1-3,5,7-`)
-- One-click merge and download
-- 100% client-side using [pdf-lib](https://www.npmjs.com/package/pdf-lib)
+- **Add PDFs**: Drag & drop or use the file picker
+- **Reorder**: Drag the handle to change order
+- **Select pages**: Per-file page ranges (e.g., `1-3,5,7-`)
+- **One‑click merge**: Download the result instantly
+- **Private**: 100% client-side with [pdf-lib](https://www.npmjs.com/package/pdf-lib)
 
-## Usage
-- Open `index.html` in your browser, or deploy to GitHub Pages (below).
-- Add PDFs, optionally type page ranges using 1-based pages:
+## Quick start
+1) Local use
+- Open `index.html` in Chrome, Edge, or Firefox.
+- Drag in PDFs, reorder as needed.
+- Optionally enter page ranges using 1‑based pages:
   - Single page: `5`
   - Range: `2-6`
   - From start: `-3` (pages 1 to 3)
   - To end: `10-` (page 10 to last)
-- Click "Merge PDFs".
+- Click “Merge PDFs” to download.
 
-## Deploy on GitHub Pages
-1. Create a new GitHub repository (public or private).
-2. Add these files to the repo root:
-   - `index.html`
-   - `styles.css`
-   - `script.js`
-   - `README.md`
-3. Commit and push to `main` (or `master`).
-4. In repo Settings → Pages:
-   - Source: "Deploy from a branch"
-   - Branch: `main` and folder `/ (root)`
-5. Save. Your site will be available at `https://<your-username>.github.io/<repo-name>/`.
-
-No build step is required; it's a pure static site.
+2) Deploy to GitHub Pages
+- Push the files to your repo root (`main` branch).
+- In GitHub: `Settings` → `Pages` → `Deploy from a branch` → Branch: `main`, Folder: `/ (root)`.
+- Your site will be available at `https://<username>.github.io/<repo-name>/`.
 
 ## Privacy
-All processing happens in your browser. Files never leave your device.
+All processing happens locally in your browser; files never leave your device. Works offline once loaded.
 
 ## Tech
 - [pdf-lib](https://github.com/Hopding/pdf-lib) for PDF manipulation
-- Vanilla HTML/CSS/JS, no frameworks
+- Vanilla HTML/CSS/JS (no build step)
 
 ## License
 MIT
