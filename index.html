@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Merge & Arrange</title>
+    <meta name="description" content="Fast, simple in-browser PDF merging and arranging. No uploads.">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>PDF Merge & Arrange</h1>
+      <p class="tagline">Simple. Fast. Private. 100% in your browser.</p>
+    </header>
+
+    <main class="container">
+      <section class="uploader" aria-label="Add PDF files">
+        <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop PDFs here or click to select">
+          <div class="drop-zone__content">
+            <div class="drop-zone__icon" aria-hidden="true">📄➕</div>
+            <div>
+              <strong>Drop PDFs here</strong>
+              <span class="muted">or</span>
+              <button id="select-btn" class="btn">Select PDFs</button>
+            </div>
+            <div class="muted small">Files never leave your device</div>
+          </div>
+          <input id="file-input" type="file" accept="application/pdf" multiple hidden />
+        </div>
+      </section>
+
+      <section class="file-list-section" aria-label="Selected files">
+        <ul id="file-list" class="file-list" aria-live="polite"></ul>
+        <div id="empty-state" class="empty-state">No PDFs added yet.</div>
+      </section>
+
+      <section class="controls" aria-label="Merge controls">
+        <div class="controls__row">
+          <label for="output-name" class="label">Output filename</label>
+          <input id="output-name" class="input" type="text" value="merged.pdf" />
+        </div>
+        <div class="controls__row">
+          <button id="merge-btn" class="btn btn-primary" disabled>Merge PDFs</button>
+          <button id="clear-btn" class="btn btn-secondary" disabled>Clear</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="muted small">Built with <a href="https://www.npmjs.com/package/pdf-lib" target="_blank" rel="noopener">pdf-lib</a>. Works offline. No data leaves your browser.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+  </html>
+
+
+
